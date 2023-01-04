@@ -27,7 +27,7 @@ function Shop(props) {
             <input
                 id="word"
                 onChange={handleChange}
-                className="w-1/4 p-8 focus:underline mt-2 md:mr-2 border-gray-300 rounded-md placeholder placeholder:font-light "
+                className="w-1/4 p- 8 focus:underline mt-2 md:mr-2 border-gray-300 rounded-md placeholder placeholder:font-light "
                 placeholder="Search for a service" value={search} type="text"
             />
             <input

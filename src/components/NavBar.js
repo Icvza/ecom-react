@@ -1,13 +1,13 @@
-import React, {useState}from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/logo-no-background.png' 
+import logo from '../assets/logo-no-background.png'
 
 function NavBar() {
 
     const [isOpen, setIsOpen] = useState(false)
-    const [isHidden, setIsHidden] =useState(true)
+    const [isHidden, setIsHidden] = useState(true)
 
-    function handleClick(event){
+    function handleClick(event) {
         setIsOpen(!isOpen)
         setIsHidden(!isHidden)
     }
@@ -17,27 +17,27 @@ function NavBar() {
 
     return (
         <nav className="flex items-center justify-between font-bold text-white bg-black">
-            <img className="h-32 p-6 hover:object-scale-down hover:scale-105 duration-200" src={logo} alt="Logo"  />
+            <img className="h-32 p-6 hover:object-scale-down hover:scale-105 duration-200" src={logo} alt="Logo" />
             <div className="hidden h-10 font-alata md:flex md:space-x-8 pr-9">
 
                 <div className="group">
                     <NavLink to="shop">
-                    <p href="./shop.html">Shop</p>
-                    <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+                        <p href="./shop.html">Shop</p>
+                        <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
                     </NavLink>
                 </div>
 
                 <div className="group">
                     <NavLink to="contact">
-                    <p href="./contact.html">Contact</p>
-                    <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+                        <p href="./contact.html">Contact</p>
+                        <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
                     </NavLink>
                 </div>
 
                 <div className="group">
                     <NavLink to="/">
-                    <p href="./index.html">Home</p>
-                    <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+                        <p href="./index.html">Home</p>
+                        <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
                     </NavLink>
                 </div>
 
@@ -52,10 +52,10 @@ function NavBar() {
             </div>
             <div id="menu" className={menuClasses}>
                 <NavLink to="shop" onClick={handleClick} className="hover:text-blue-300">Shop</NavLink>
-                <br/>
+                <br />
                 <NavLink to="contact" onClick={handleClick} className="hover:text-blue-300">Contact</NavLink>
-                <br/>
-                <NavLink to="/" onClick={handleClick}  className="hover:text-blue-300">Home</NavLink>
+                <br />
+                <NavLink to="/" onClick={handleClick} className="hover:text-blue-300">Home</NavLink>
             </div>
         </nav>
     )

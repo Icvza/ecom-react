@@ -4,11 +4,11 @@ export default function Product(props) {
     return (
 
         <div class="flex flex-col items-center justify-center min-h-screen bg-slate-100">
-            
+
             <div
                 class="flex flex-col p-6 m-3 space-y-10 bg-white rounded-2xl shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16"
             >
-                
+
                 <div>
                     <img
                         src={props.item.img}
@@ -17,7 +17,7 @@ export default function Product(props) {
                     />
                 </div>
 
-                
+
                 <div class="flex flex-col space-y-6">
                     <div class="flex flex-col mb-4 space-y-3 text-center md:text-left">
                         <div>
@@ -28,11 +28,11 @@ export default function Product(props) {
                             </div>
                         </div>
 
-                        
+
                         <div class="max-w-sm text-2xl font-medium">
                             {props.item.name}
                         </div>
-                        
+
                         <div class="flex flex-col mb-4 space-y-3 text-center md:text-left">
                             <p class="line-through">${props.item.price - 25}</p>
                             <p class="text-5xl font-bold">${props.item.price}</p>
@@ -41,7 +41,7 @@ export default function Product(props) {
                             </p>
                         </div>
 
-                        
+
                         <div class="group">
                             <button
                                 class="w-full transition-all duration-150 bg-blue-700 text-white border-b-8 border-b-blue-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-blue-700 group-hover:border-t-blue-700 group-hover:shadow-lg"
@@ -62,7 +62,7 @@ export default function Product(props) {
                             <div class="text-sm">Available this week</div>
                         </div>
 
-                        
+
                         <div
                             class="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
                         >

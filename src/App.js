@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './screens/Home'
+import Contact from './screens/Contact'
+import Shop from './screens/Shop'
+import Footer from './components/Footer';
+import LoadingScreen from './screens/LoadingScreen';
 
 function App() {
+
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://mountingly.herokuapp.com/');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setData(data);
+    }
+    fetchData();
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      {data ? (
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<Shop data={data}/>} />
+          </Routes>
+          <Footer />
+        </Router>
+      ) : (
+        <LoadingScreen />
+      )}
     </div>
   );
 }
 
 export default App;
+
+
+

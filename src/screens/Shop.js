@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Product from '../components/Product'
+//import { ShoppingCartContext } from '../App';
 
 function Shop(props) {
 
     const [search, setSearch] = useState('')
     const [searchPrice, setSearchPrice] = useState('')
     const [results, setResults] = useState([])
+
+    //const { cart, addToCart } = React.useContext(ShoppingCartContext);
 
 
     function handleChange(event) {

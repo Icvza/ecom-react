@@ -49,6 +49,13 @@ function NavBar() {
                         <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
                     </NavLink>
                 </div>
+                
+                <div className="group">
+                    <NavLink to="cart">
+                        <p href="./index.html">Cart</p>
+                        <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+                    </NavLink>
+                </div>
 
             </div>
 

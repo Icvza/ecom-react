@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {ShoppingCartContext} from '../App' 
 
-export default function Product(props) {
+function Product(props) {
+
+    const { addToCart } = useContext(ShoppingCartContext);
     return (
 
         // <div class="flex flex-col items-center justify-center min-h-screen bg-slate-100">
@@ -104,7 +107,7 @@ export default function Product(props) {
                     {/* <!-- Button Group --> */}
                     <div className="group">
                         <button className="w-full transition-all duration-150 bg-blue-700 text-white border-b-8 border-b-blue-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-blue-700 group-hover:border-t-blue-700 group-hover:shadow-lg">
-                            <div className="px-8 py-4 duration-150 bg-blue-500 rounded-lg group-hover:bg-blue-700">
+                            <div onClick={ () => addToCart(props.item)}className="px-8 py-4 duration-150 bg-blue-500 rounded-lg group-hover:bg-blue-700">
                                 Add to cart
                             </div>
                         </button>
@@ -117,7 +120,7 @@ export default function Product(props) {
                     </div>
                     {/* <!-- Bottom Buttons Container --> */}
                     <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
-                        <button className="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150">
+                        <button onClick={() => addToCart(props.item)} className="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150">
                             <span>Add to cart</span>
                         </button>
                         <button className="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150">
@@ -130,3 +133,4 @@ export default function Product(props) {
     )
 }
 
+export default Product

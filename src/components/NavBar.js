@@ -19,8 +19,6 @@ function NavBar() {
         )
     }
 
-
-
     const hamStackClasses = `z-40 block hamburger mr-4 md:hidden focus:outline-none ${isOpen ? 'open' : ''}`
     const menuClasses = `absolute top-0  bottom-0 left-0 ${isHidden ? 'hidden' : ''} flex-col self-end w-full min-h-screen py-1 pt-40 pl-12 space-y-2 text-lg text-white uppercase bg-black`
 
